@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss'
 
 function App() {
+
+  const handleChange = (value) => {
+    console.log(value);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='homePage'>
+      <h1>Expense Tracking</h1>
+      <input className='form-control' type="number" placeholder='nhập số tiền cần quản lí' onChange={(event) => handleChange(event.target.value)} />
+      <button className='btn btn-secondary mt-3'>Save</button>
     </div>
   );
 }
