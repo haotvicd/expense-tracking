@@ -1,4 +1,4 @@
-.homePage {
+.app {
   width: 100vw;
   height: 100vh;
   background-color: var(--bs-yellow);
@@ -11,5 +11,29 @@
   }
   input {
     max-width: 300px;
+  }
+}
+
+.homepage {
+  background-color: var(--bs-white);
+  padding: 2rem;
+  border-radius: 10px;
+  min-width: 320px;
+}
+
+.transaction {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    &-name {
+      font-weight: bold;
+    }
+    &-price {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
