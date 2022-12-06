@@ -1,6 +1,6 @@
 .app {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: var(--bs-yellow);
   display: flex;
   justify-content: center;
@@ -14,19 +14,29 @@
   }
 }
 
-.homepage {
+.box {
   background-color: var(--bs-white);
   padding: 2rem;
   border-radius: 10px;
   min-width: 320px;
 }
 
+.income,
+.balance,
+.expense {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .transaction {
+  min-height: 230px;
+  position: relative;
   &__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: .5rem 0;
 
     &-name {
       font-weight: bold;
@@ -36,4 +46,11 @@
       flex-direction: column;
     }
   }
+}
+
+.expense-none {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
