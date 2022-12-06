@@ -20,17 +20,24 @@ const FirstView = () => {
     localStorage.setItem('income', JSON.stringify(e.target.value));
   }
 
+  const handleCancel = () => {
+    navigator('/homepage');
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <h1>Expense Tracking</h1>
-      <input className='form-control' type="number" placeholder='nhập số tiền cần quản lí' onChange={handleChange} />
+      <input className='form-control' type="number" placeholder='nhập số tiền cần quản lí' required onChange={handleChange} />
       {income === 0 && (
-        <button className='btn btn-secondary w-100 mt-3'>Save</button>
+        <button className='btn btn-success w-100 mt-3'>Save</button>
       )}
       {income > 0 && (
         <>
           <p className="mt-3">Số tiền hiện tại: <small>{income}</small></p>
-          <button className='btn btn-secondary w-100'>Update số tiền</button>
+          <div className="wrap-button">
+            <button className='btn btn-secondary' onClick={handleCancel}>Cancel</button>
+            <button className='btn btn-success'>Update số tiền</button>
+          </div>
         </>
       )}
     </form>
