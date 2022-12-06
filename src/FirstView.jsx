@@ -36,7 +36,7 @@ const FirstView = () => {
           <p className="mt-3">Số tiền hiện tại: <small>{income}</small></p>
           <div className="wrap-button">
             <button className='btn btn-secondary' onClick={handleCancel}>Cancel</button>
-            <button className='btn btn-success'>Update số tiền</button>
+            <button className='btn btn-success'>Update</button>
           </div>
         </>
       )}
