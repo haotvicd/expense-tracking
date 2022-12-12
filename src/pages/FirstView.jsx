@@ -28,9 +28,7 @@ const FirstView = () => {
     <form onSubmit={handleSubmit}>
       <h1>Expense Tracking</h1>
       <input className='form-control' type="number" placeholder='nhập số tiền cần quản lí' required onChange={handleChange} />
-      {income === 0 && (
-        <button className='btn btn-success w-100 mt-3'>Save</button>
-      )}
+      <button className='btn btn-success w-100 mt-3'>Save</button>
       {/* {income > 0 && (
         <>
           <p className="mt-3">Số tiền hiện tại: <small>{income}</small></p>
