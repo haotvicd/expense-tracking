@@ -1,4 +1,4 @@
-import { DataContext } from "DataContext";
+import { DataContext } from "contexts/DataContext";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -20,9 +20,9 @@ const FirstView = () => {
     localStorage.setItem('income', JSON.stringify(e.target.value));
   }
 
-  const handleCancel = () => {
-    navigator('/homepage');
-  }
+  // const handleCancel = () => {
+  //   navigator('/homepage');
+  // }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -31,7 +31,7 @@ const FirstView = () => {
       {income === 0 && (
         <button className='btn btn-success w-100 mt-3'>Save</button>
       )}
-      {income > 0 && (
+      {/* {income > 0 && (
         <>
           <p className="mt-3">Số tiền hiện tại: <small>{income}</small></p>
           <div className="wrap-button">
@@ -39,7 +39,7 @@ const FirstView = () => {
             <button className='btn btn-success'>Update</button>
           </div>
         </>
-      )}
+      )} */}
     </form>
   )
 }

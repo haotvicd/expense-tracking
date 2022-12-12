@@ -6,6 +6,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   h1 {
     color: var(--bs-gray-dark);
   }
@@ -27,7 +28,9 @@
   background-color: var(--bs-white);
   padding: 2rem;
   border-radius: 10px;
-  min-width: 320px;
+  width: 100%;
+  max-width: 320px;
+  overflow: hidden;
 }
 
 .income,
@@ -46,13 +49,32 @@
     justify-content: space-between;
     align-items: center;
     padding: .5rem 0;
-
+    position: relative;
+    &:hover {
+      .transaction__item-control {
+        display: flex;
+      }
+    }
     &-name {
       font-weight: bold;
     }
     &-price {
       display: flex;
       flex-direction: column;
+    }
+    &-control {
+      position: absolute;
+      width: 200%;
+      right: -2rem;
+      display: flex;
+      padding: 0.5rem;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: rgba(0, 0, 0, .3);
+      display: none;
+      > button {
+        opacity: 0.8;
+      }
     }
   }
 }
@@ -62,4 +84,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.react-confirm-alert-overlay {
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.react-confirm-alert {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
 }

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import useForm from "customHooks/useForm";
-import { DataContext } from "DataContext";
+import { DataContext } from "contexts/DataContext";
 import { Link, useNavigate } from "react-router-dom";
 
 
@@ -15,7 +15,7 @@ const formatDate = () => {
 
 const AddExpense = () => {
   const navigate = useNavigate();
-  const { expense, setExpense } = useContext(DataContext);
+  const { setExpense } = useContext(DataContext);
   const addExpense = () => {
     const newExpense = {
       ...values,
