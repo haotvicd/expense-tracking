@@ -29,13 +29,18 @@ const AddExpense = () => {
     navigate('/homepage');
   }
 
-  const [values, handleChange, handleSubmit] = useForm(addExpense)
+  const [values, error, handleChange, handleSubmit] = useForm(addExpense)
 
   return (
     <div className="box addForm">
       <Link to='/homepage' className='btn btn-success mb-2'>Back</Link>
       <hr />
       <h1>Add Expense</h1>
+      {error && (
+        <div className="alert alert-danger">
+          This is not a number!
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
         <div className="form-group mb-3">
           <label htmlFor="">Name</label>
@@ -43,7 +48,7 @@ const AddExpense = () => {
         </div>
         <div className="form-group mb-3">
           <label htmlFor="">Price</label>
-          <input type="number" name="price" onChange={handleChange} className="form-control" required />
+          <input type="text" name="income" onChange={handleChange} className="form-control" required />
         </div>
         <button className="btn btn-primary w-100">Save</button>
       </form>

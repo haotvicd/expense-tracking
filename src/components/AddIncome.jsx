@@ -16,17 +16,22 @@ const AddIncome = () => {
     navigate('/homepage');
   }
 
-  const [values, handleChange, handleSubmit] = useForm(addIncome);
+  const [values, error, handleChange, handleSubmit] = useForm(addIncome);
   return (
     <div className="box addForm">
       <Link to='/homepage' className='btn btn-success mb-2'>Back</Link>
       <hr />
       <h1>Add Income</h1>
       <p>Current income: <span className="badge bg-danger fs-3 fw-bold">{income}</span></p>
+      {error && (
+        <div className="alert alert-danger">
+          This is not a number!
+        </div>
+      )}
       <form onSubmit={handleSubmit}>
         <div className="form-group mb-3">
           <label htmlFor="">Money number</label>
-          <input type="number" name="income" onChange={handleChange} className="form-control" required />
+          <input type="text" name="income" onChange={handleChange} className="form-control" required />
         </div>
         <button className="btn btn-primary w-100">Save</button>
       </form>

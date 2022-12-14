@@ -10,7 +10,6 @@ import { DataContext } from 'contexts/DataContext';
 
 function App() {
   const { income } = useContext(DataContext);
-  console.log(income);
   return (
     <div className='app'>
       <Routes>

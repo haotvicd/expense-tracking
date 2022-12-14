@@ -48,7 +48,7 @@ const ExpenseItem = () => {
         >
           <div className="transaction__item-name">{ex.name}</div>
           <div className="transaction__item-price">
-            <span className='fs-5'>-{ex.price} VNĐ</span>
+            <span className='fs-5'>-{ex.income} VNĐ</span>
             <small className='text-secondary text-end'>{ex.createdAt}</small>
           </div>
           <div className="transaction__item-control">

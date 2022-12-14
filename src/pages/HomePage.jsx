@@ -5,7 +5,7 @@ import ExpenseItem from 'components/ExpenseItem';
 
 const HomePage = () => {
   const { income, expense } = useContext(DataContext);
-  const totalExpense = expense.length === 0 ? 0 : '-' + expense.reduce((sum, cur) => sum + parseInt(cur.price), 0)
+  const totalExpense = expense.length === 0 ? 0 : '-' + expense.reduce((sum, cur) => sum + parseInt(cur.income), 0)
   const balance = income - Math.abs(parseInt(totalExpense));
   return (
     <>
